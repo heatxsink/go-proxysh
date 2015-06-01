@@ -19,9 +19,14 @@ import (
   "github.com/heatxsink/go-proxysh"
 )
 
+const (
+  username = "your-username-here"
+  password = "your-password-here"
+)
+
 func main() {
-  proxysh.New(username, password)
-  data, err := proxysh.GetServerLoad()
+  pp := proxysh.New(username, password)
+  data, err := pp.GetServerLoad()
   if err != nil {
     fmt.Println("Error: ", err)
   }
@@ -31,6 +36,5 @@ func main() {
     fmt.Println("Server Load: ", s.ServerLoad)
     fmt.Println()
   }
-}
 
 ```
